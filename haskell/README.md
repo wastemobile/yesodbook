@@ -24,31 +24,22 @@ data Person = Person Text Int
 * `data` 声明，如上文出现的 `Person`。你还可以创建代数数据类型(ADTs: Algebraic
 Data Types)，比如 `data Vehicle = Bicycle GearCount | Car Make Model`。
 
-数据构造函数:: 在上面的例子中，++Person++，++Make++，++Bicycle++和++Car++是数据构造函数
+数据构造函数:: 在上面的例子中，`Person`，`Make`，`Bicycle` 和 `Car` 是数据构造函数
 。
 
-类型构造函数:: 在上面的例子中，++Person++，++Make++和++Vehicle++是类型构造函数。
+类型构造函数:: 在上面的例子中，`Person`，`Make` 和 `Vehicle` 是类型构造函数。
 
-类型变量:: 以++data Maybe a = Just a | Nothing++为例，++a++就是类型变量。
+类型变量:: 以 `data Maybe a = Just a | Nothing` 为例，`a` 就是类型变量。
 
-[[I_sect12_d1e535]]
+### 工具
 
-=== 工具
-
-Haskell开发有两个主要工具。格拉斯哥Haskell编译器(GHC: Glasgow Haskell Compiler)
-是标准的Haskell编译器，也是Yesod唯一正式支持的编译器。你还需要Cabal，它是
-Haskell标准的构建(build)工具。我们不仅使用Cabal构建本地代码，也用它来自动从
-Hackage下载安装依赖包。Hackage是Haskell的软件包仓库。
+Haskell开发有两个主要工具。格拉斯哥Haskell编译器(GHC: Glasgow Haskell Compiler)是标准的Haskell编译器，也是Yesod唯一正式支持的编译器。你还需要Cabal，它是Haskell标准的构建(build)工具。我们不仅使用Cabal构建本地代码，也用它来自动从Hackage下载安装依赖包。Hackage是Haskell的软件包仓库。
 
 如果你用的是Windows或Mac，强烈推荐你下载
-link:$$http://hackage.haskell.org/platform/$$[Haskell Platform]。在Linux上，很
-多发行版在官方仓库里包含了Haskell Platform。比如在基于Debian的系统中，你可以通
-过运行++sudo apt-get install haskell-platform++来安装。如果你用的发行版没有包含
-Haskell Platform，你可以按照Haskell Platform网页上的介绍手动安装。
+ [Haskell Platform](http://hackage.haskell.org/platform/)。在Linux上，很多发行版在官方仓库里包含了Haskell Platform。比如在基于Debian的系统中，你可以通过运行++sudo apt-get install haskell-platform++来安装。如果你用的发行版没有包含Haskell Platform，你可以按照Haskell Platform网页上的介绍手动安装。
 
-__alex__这个重要的包你需要手动更新。Haskell Platform包含的alex是版本2，而Yesod使
-用的Javascript最小化(minifier)工具hjsmin，需要版本3。一定要在Haskell Platform搭
-建好后运行__cabal install alex__，否则会有关于language-javascript包的报错信息。
+ps. 这个重要的包你需要手动更新。Haskell Platform包含的alex是版本2，而Yesod使用的Javascript最小化(minifier)工具hjsmin，需要版本3。一定要在Haskell Platform搭
+建好后运行 `cabal install alex`，否则会有关于language-javascript包的报错信息。
 
 [caption="注意"]
 [NOTE]
